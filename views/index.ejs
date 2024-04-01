@@ -1,25 +1,19 @@
 <div class="author">
-  <h1 class="author__heading">Hi, I am Saniya.</h1>
-  <p class="author__body">Web developer and content creator</p>
+    <h1 class="author__heading">Hi, I am Saniya.</h1>
+    <p class="author__body">Web developer and content creator</p>
 </div>
-<img src="img\heroine-image.webp.jpg" height="528" width="981" />
+<img src="img\heroine-image.webp.jpg" height="528" width="981">
 
 <section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
-  <ul class="article-ul">
-    <% data.forEach(post => { %>
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <li>
+<a href="#">
+    <span>Post Title</span>
+    <span class="article-list__date">Date</span>
 
-    <li>
-      <a href="/post/<%= post._id %>">
-        <span><%= post.title %></span>
-        <span class="article-list__date"
-          ><%= post.createdAt.toDateString() %></span
-        >
-      </a>
-    </li>
-    <% }) %>
-  </ul>
-  <% if (nextPage !== null) { %>
-    <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
-  <% } %>
+</a>
+        </li>
+    </ul>
+    <a href="#" class="pagination">&lt; View Older Posts</a>
 </section>
