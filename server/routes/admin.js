@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/post");
+const user = require("../models/user");
+
 const adminLayout = '../views/layouts/admin'
 /*
  * GET /
@@ -18,4 +20,37 @@ router.get("/admin", async (req, res) => {
   }
 });
 
+/*
+ * POST /
+ * Admin - login page
+ */
+router.post("/admin", async (req, res) => {
+    try {
+     const{username, password}=req.body;
+     console.log(req.body)
+      res.redirect('/admin');
+
+
+    } catch (error) {
+      console.log(error);
+    }
+  });
+
+
+
+  /*
+ * POST /
+ * Admin - Register
+ */
+router.post("/register", async (req, res) => {
+  try {
+   const{username, password}=req.body;
+   console.log(req.body)
+    res.redirect('/admin');
+
+
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;
