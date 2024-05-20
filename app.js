@@ -22,7 +22,7 @@ app.use(session({
   saveUninitialized: true,
   store: MongoStore.create({
      mongoUrl: process.env.MONGODB_URI
-  })
+  }),
 }))
 
 app.use(express.static("public"));
@@ -33,6 +33,7 @@ app.set("view engine", "ejs");
 
 app.use("/", require("./server/routes/main"));
 app.use("/", require("./server/routes/admin"));
+
 app.use("/about", require("./server/routes/main"));
 app.use("/contact", require("./server/routes/main"));
 
